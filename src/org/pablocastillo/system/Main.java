@@ -14,6 +14,7 @@ import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.pablocastillo.controller.FormAsignarEController;
 import org.pablocastillo.controller.FormClienteController;
 import org.pablocastillo.controller.FormDistribuidoresController;
 import org.pablocastillo.controller.MenuCargosController;
@@ -22,6 +23,20 @@ import org.pablocastillo.controller.MenuDistribuidoresController;
 import org.pablocastillo.controller.MenuPrincipalController;
 import org.pablocastillo.controller.MenuTicketSoporteController;
 import org.pablocastillo.controller.FormCargosController;
+import org.pablocastillo.controller.FormCategoriaPController;
+import org.pablocastillo.controller.FormComprasController;
+import org.pablocastillo.controller.FormDetalleCompraController;
+import org.pablocastillo.controller.FormDetalleFacturaController;
+import org.pablocastillo.controller.FormEmpleadosController;
+import org.pablocastillo.controller.FormFacturasController;
+import org.pablocastillo.controller.FormProductosController;
+import org.pablocastillo.controller.FormPromocionesController;
+import org.pablocastillo.controller.MenuCategoriaPController;
+import org.pablocastillo.controller.MenuComprasController;
+import org.pablocastillo.controller.MenuEmpleadosController;
+import org.pablocastillo.controller.MenuFacturasController;
+import org.pablocastillo.controller.MenuProductosController;
+import org.pablocastillo.controller.MenuPromocionesController;
 
 /**
  *
@@ -133,6 +148,151 @@ public class Main extends Application {
             System.out.println(e.getMessage());
         }
     }
+    
+    public void menuCategoriaPView(){
+        try{
+            MenuCategoriaPController menuCategoriaP = (MenuCategoriaPController)switchScene("MenuCategoriaPView.fxml", 1200, 750);
+            menuCategoriaP.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void formCategoriaPView(int op){
+        try{
+            FormCategoriaPController formCategoriaP = (FormCategoriaPController)switchScene("FormCategoriaPView.fxml", 500, 750);
+            formCategoriaP.setOp(op);
+            formCategoriaP.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void menuEmpleadosView(){
+        try{
+            MenuEmpleadosController menuEmpleado = (MenuEmpleadosController)switchScene("MenuEmpleadosView.fxml", 1200, 750);
+            menuEmpleado.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void formEmpleadosView(int op){
+        try{
+            FormEmpleadosController formEmpleado = (FormEmpleadosController)switchScene("FormEmpleadosView.fxml", 500, 1000);
+            formEmpleado.setOp(op);
+            formEmpleado.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void formAsignarEView(){
+        try{
+            FormAsignarEController formAsignarE = (FormAsignarEController)switchScene("FormAsignarEView.fxml", 500, 750);
+            formAsignarE.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void menuProductosView(){
+        try{
+            MenuProductosController menuProductos = (MenuProductosController)switchScene("MenuProductosView.fxml", 1200, 750);
+            menuProductos.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void formProductosView(int op){
+        try{
+            FormProductosController formProductos = (FormProductosController)switchScene("FormProductosView.fxml", 1200, 750);
+            formProductos.setOp(op);
+            formProductos.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void menuPromocionesView(){
+        try{
+            MenuPromocionesController menuPromociones = (MenuPromocionesController)switchScene("MenuPromocionesView.fxml", 1200, 750);
+            menuPromociones.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void formPromocionesView(int op){
+        try{
+            FormPromocionesController formPromociones = (FormPromocionesController)switchScene("FormPromocionesView.fxml", 500, 750);
+            formPromociones.setOp(op);
+            formPromociones.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void menuFacturasView(){
+        try{
+            MenuFacturasController menuFacturas = (MenuFacturasController)switchScene("MenuFacturasView.fxml", 1200, 750);
+            menuFacturas.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void formFacturasView(int op){
+        try{
+            FormFacturasController formFacturas = (FormFacturasController)switchScene("FormFacturasView.fxml", 500, 750);
+            formFacturas.setOp(op);
+            formFacturas.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void formDetalleFacturaView(int op){
+        try{
+            FormDetalleFacturaController formDetalleFactura = (FormDetalleFacturaController)switchScene("FormDetalleFacturaView.fxml", 500, 750);
+            formDetalleFactura.setOp(op);
+            formDetalleFactura.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void menuComprasView(){
+        try{
+            MenuComprasController menuCompras = (MenuComprasController)switchScene("MenuComprasView.fxml", 1200, 750);
+            menuCompras.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void formComprasView(int op){
+        try{
+            FormComprasController formCompras = (FormComprasController)switchScene("FormComprasView.fxml", 500, 750);
+            formCompras.setOp(op);
+            formCompras.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void formDetalleCompraView(int op){
+        try{
+            FormDetalleCompraController formDetalleFactura = (FormDetalleCompraController)switchScene("FormDetalleCompraView.fxml", 500, 750);
+            formDetalleFactura.setOp(op);
+            formDetalleFactura.setStage(this);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    
 
     /**
      * @param args the command line arguments

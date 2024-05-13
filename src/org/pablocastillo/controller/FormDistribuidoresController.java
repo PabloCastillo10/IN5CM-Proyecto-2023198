@@ -18,7 +18,7 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import org.pablocastillo.dao.Conexion;
 import org.pablocastillo.dto.DistribuidorDTO;
-import org.pablocastillo.model.Distribuidores;
+import org.pablocastillo.model.Distribuidor;
 import org.pablocastillo.system.Main;
 import org.pablocastillo.utils.SuperKinalAlert;
 
@@ -87,7 +87,7 @@ public class FormDistribuidoresController implements Initializable {
         }
     }
 
-    public void cargarDatos(Distribuidores distribuidores){
+    public void cargarDatos(Distribuidor distribuidores){
         tfDistribuidorId.setText(Integer.toString(distribuidores.getDistribuidorId()));
         tfNombre.setText(distribuidores.getNombreDistribuidor());
         tfDireccion.setText(distribuidores.getDireccionDistribuidor());

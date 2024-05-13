@@ -9,16 +9,16 @@ package org.pablocastillo.model;
  *
  * @author informatica
  */
-public class Cargos {
+public class Cargo {
     private int cargoId;
     private String nombreCargo;
     private String descripcionCargo;
  
     
-    public Cargos() {
+    public Cargo() {
     }
 
-    public Cargos(int cargoId, String nombreCargo, String descripcionCargo) {
+    public Cargo(int cargoId, String nombreCargo, String descripcionCargo) {
         this.cargoId = cargoId;
         this.nombreCargo = nombreCargo;
         this.descripcionCargo = descripcionCargo;

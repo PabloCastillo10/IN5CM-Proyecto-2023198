@@ -19,7 +19,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import org.pablocastillo.dao.Conexion;
 import org.pablocastillo.dto.CargoDTO;
-import org.pablocastillo.model.Cargos;
+import org.pablocastillo.model.Cargo;
 import org.pablocastillo.system.Main;
 import org.pablocastillo.utils.SuperKinalAlert;
 
@@ -91,7 +91,7 @@ public class FormCargosController implements Initializable {
         }
     }
 
-    public void cargarDatos(Cargos cargos){
+    public void cargarDatos(Cargo cargos){
         tfCargoId.setText(Integer.toString(cargos.getCargoId()));
         tfNombreCargo.setText(cargos.getNombreCargo());
         taDescripcionCargo.setText(cargos.getDescripcionCargo());   

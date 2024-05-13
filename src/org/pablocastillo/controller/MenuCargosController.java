@@ -25,7 +25,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.pablocastillo.dao.Conexion;
 import org.pablocastillo.dto.CargoDTO;
-import org.pablocastillo.model.Cargos;
+import org.pablocastillo.model.Cargo;
 import org.pablocastillo.system.Main;
 import org.pablocastillo.utils.SuperKinalAlert;
 
@@ -62,11 +62,11 @@ public class MenuCargosController implements Initializable {
         }else if(event.getSource() == btnAgregar){
             stage.formCargosView(1);
         }else if(event.getSource() == btnEditar){
-            CargoDTO.getCargosDTO().setCargos((Cargos)tblCargos.getSelectionModel().getSelectedItem());
+            CargoDTO.getCargosDTO().setCargos((Cargo)tblCargos.getSelectionModel().getSelectedItem());
             stage.formCargosView(2);
         }else if(event.getSource() == btnEliminar){
             if(SuperKinalAlert.getInstance().mostrarAlertaConfirmacion(404).get() == ButtonType.OK){
-                eliminarCargos(((Cargos)tblCargos.getSelectionModel().getSelectedItem()).getCargoId());
+                eliminarCargos(((Cargo)tblCargos.getSelectionModel().getSelectedItem()).getCargoId());
                 cargarDatos(); 
             }
         }else if(event.getSource() == btnBuscar){
@@ -94,13 +94,13 @@ public class MenuCargosController implements Initializable {
         }else{
             tblCargos.setItems(listarCargos());
         }
-        colCargoId.setCellValueFactory(new PropertyValueFactory<Cargos, Integer>("cargoId"));
-        colNombreCargo.setCellValueFactory(new PropertyValueFactory<Cargos, String>("nombreCargo"));
-        colDescripcionCargo.setCellValueFactory(new PropertyValueFactory<Cargos, String>("descripcionCargo"));
+        colCargoId.setCellValueFactory(new PropertyValueFactory<Cargo, Integer>("cargoId"));
+        colNombreCargo.setCellValueFactory(new PropertyValueFactory<Cargo, String>("nombreCargo"));
+        colDescripcionCargo.setCellValueFactory(new PropertyValueFactory<Cargo, String>("descripcionCargo"));
     }
     
-    public ObservableList<Cargos> listarCargos(){
-        ArrayList<Cargos> Cargos = new ArrayList<>();
+    public ObservableList<Cargo> listarCargos(){
+        ArrayList<Cargo> Cargos = new ArrayList<>();
         
         try{
             conexion = Conexion.getInstance().obtenerConexion();
@@ -112,7 +112,7 @@ public class MenuCargosController implements Initializable {
                 int cargoId = resultSet.getInt("cargoId");
                 String nombreCargo = resultSet.getString("nombreCargo");
                 String descripcionCargo = resultSet.getString("descripcionCargo");     
-                Cargos.add(new Cargos(cargoId, nombreCargo, descripcionCargo));
+                Cargos.add(new Cargo(cargoId, nombreCargo, descripcionCargo));
             }
         }catch(SQLException e){
             System.out.println(e.getMessage());
@@ -158,8 +158,8 @@ public class MenuCargosController implements Initializable {
         }
     }
     
-    public Cargos buscarCargos(){
-        Cargos cargos = null;
+    public Cargo buscarCargos(){
+        Cargo cargos = null;
         
         try{
             conexion = Conexion.getInstance().obtenerConexion();
@@ -173,7 +173,7 @@ public class MenuCargosController implements Initializable {
                 String descripcionCargo = resultSet.getString("descripcionCargo");
                 
                 
-                cargos = new Cargos(cargoId, nombreCargo, descripcionCargo);
+                cargos = new Cargo(cargoId, nombreCargo, descripcionCargo);
             }
             
         }catch(Exception e){

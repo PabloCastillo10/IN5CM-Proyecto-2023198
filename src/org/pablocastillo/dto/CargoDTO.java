@@ -5,7 +5,7 @@
  */
 package org.pablocastillo.dto;
 
-import org.pablocastillo.model.Cargos;
+import org.pablocastillo.model.Cargo;
 
 /**
  *
@@ -13,7 +13,7 @@ import org.pablocastillo.model.Cargos;
  */
 public class CargoDTO {
     private static CargoDTO instance;
-    private Cargos cargos;
+    private Cargo cargos;
     
     private CargoDTO() {
         
@@ -26,11 +26,11 @@ public class CargoDTO {
         return instance;
     }
 
-    public Cargos getCargos() {
+    public Cargo getCargos() {
         return cargos;
     }
 
-    public void setCargos(Cargos cargos) {
+    public void setCargos(Cargo cargos) {
         this.cargos = cargos;
     }
     

@@ -25,7 +25,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.pablocastillo.dao.Conexion;
 import org.pablocastillo.dto.DistribuidorDTO;
-import org.pablocastillo.model.Distribuidores;
+import org.pablocastillo.model.Distribuidor;
 import org.pablocastillo.system.Main;
 import org.pablocastillo.utils.SuperKinalAlert;
 
@@ -62,11 +62,11 @@ public class MenuDistribuidoresController implements Initializable {
         }else if(event.getSource() == btnAgregar){
             stage.formDistribuidorView(1);
         }else if(event.getSource() == btnEditar){
-            DistribuidorDTO.getDistribuidorDTO().setDistribuidores((Distribuidores)tblDistribuidores.getSelectionModel().getSelectedItem());
+            DistribuidorDTO.getDistribuidorDTO().setDistribuidores((Distribuidor)tblDistribuidores.getSelectionModel().getSelectedItem());
             stage.formDistribuidorView(2);
         }else if(event.getSource() == btnEliminar){
             if(SuperKinalAlert.getInstance().mostrarAlertaConfirmacion(404).get() == ButtonType.OK){
-                eliminarDistribuidor(((Distribuidores)tblDistribuidores.getSelectionModel().getSelectedItem()).getDistribuidorId());
+                eliminarDistribuidor(((Distribuidor)tblDistribuidores.getSelectionModel().getSelectedItem()).getDistribuidorId());
                 cargarDatos(); 
             }
         }else if(event.getSource() == btnBuscar){
@@ -94,16 +94,16 @@ public class MenuDistribuidoresController implements Initializable {
         }else{
             tblDistribuidores.setItems(listarDistribuidor());
         }
-        colDistribuidorId.setCellValueFactory(new PropertyValueFactory<Distribuidores, Integer>("distribuidorId"));
-        colNombre.setCellValueFactory(new PropertyValueFactory<Distribuidores, String>("nombreDistribuidor"));
-        colDireccion.setCellValueFactory(new PropertyValueFactory<Distribuidores, String>("direccionDistribuidor"));
-        colNit.setCellValueFactory(new PropertyValueFactory<Distribuidores, String>("NitDistribuidor"));
-        colTelefono.setCellValueFactory(new PropertyValueFactory<Distribuidores, String>("telefonoDistribuidor"));
-        colWeb.setCellValueFactory(new PropertyValueFactory<Distribuidores, String>("web"));
+        colDistribuidorId.setCellValueFactory(new PropertyValueFactory<Distribuidor, Integer>("distribuidorId"));
+        colNombre.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("nombreDistribuidor"));
+        colDireccion.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("direccionDistribuidor"));
+        colNit.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("NitDistribuidor"));
+        colTelefono.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("telefonoDistribuidor"));
+        colWeb.setCellValueFactory(new PropertyValueFactory<Distribuidor, String>("web"));
     }
     
-    public ObservableList<Distribuidores> listarDistribuidor(){
-        ArrayList<Distribuidores> Distribuidores = new ArrayList<>();
+    public ObservableList<Distribuidor> listarDistribuidor(){
+        ArrayList<Distribuidor> Distribuidores = new ArrayList<>();
         
         try{
             conexion = Conexion.getInstance().obtenerConexion();
@@ -119,7 +119,7 @@ public class MenuDistribuidoresController implements Initializable {
                 String telefonoDistribuidor = resultSet.getString("telefonoDistribuidor");
                 String web = resultSet.getString("web");
                 
-                Distribuidores.add(new Distribuidores(distribuidorId, nombreDistribuidor, direccionDistribuidor, NitDistribuidor, telefonoDistribuidor, web));
+                Distribuidores.add(new Distribuidor(distribuidorId, nombreDistribuidor, direccionDistribuidor, NitDistribuidor, telefonoDistribuidor, web));
             }
         }catch(SQLException e){
             System.out.println(e.getMessage());
@@ -165,8 +165,8 @@ public class MenuDistribuidoresController implements Initializable {
         }
     }
     
-    public Distribuidores buscarDistribuidor(){
-        Distribuidores distribuidores = null;
+    public Distribuidor buscarDistribuidor(){
+        Distribuidor distribuidores = null;
         
         try{
             conexion = Conexion.getInstance().obtenerConexion();
@@ -182,7 +182,7 @@ public class MenuDistribuidoresController implements Initializable {
                 String telefonoDistribuidor = resultSet.getString("telefonoDistribuidor");
                 String web = resultSet.getString("web");
                 
-                distribuidores = new Distribuidores(distribuidorId, nombreDistribuidor, direccionDistribuidor, NitDistribuidor, telefonoDistribuidor, web);
+                distribuidores = new Distribuidor(distribuidorId, nombreDistribuidor, direccionDistribuidor, NitDistribuidor, telefonoDistribuidor, web);
             }
             
         }catch(Exception e){

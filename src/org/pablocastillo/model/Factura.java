@@ -8,30 +8,30 @@ package org.pablocastillo.model;
 import java.sql.Date;
 import java.sql.Time;
 
-/**
- *
- * @author informatica
- */
-public class Facturas {
+
+public class Factura {
     private int facturaId;
     private Date fecha;
     private Time hora;
     private int clienteId;
+    private String Cliente;
     private int empleadoId;
-    private Double total;
-    
-    public Facturas() {
-        
+    private String Empleado;
+    private double Total;
+
+    public Factura() {
     }
 
-    public Facturas(int facturaId, Date fecha, Time hora, int clienteId, int empleadoId, Double total) {
+    public Factura(int facturaId, Date fecha, Time hora, String Cliente, String Empleado, double Total) {
         this.facturaId = facturaId;
         this.fecha = fecha;
         this.hora = hora;
-        this.clienteId = clienteId;
-        this.empleadoId = empleadoId;
-        this.total = total;
+        this.Cliente = Cliente;
+        this.Empleado = Empleado;
+        this.Total = Total;
     }
+
+    
 
     public int getFacturaId() {
         return facturaId;
@@ -65,6 +65,14 @@ public class Facturas {
         this.clienteId = clienteId;
     }
 
+    public String getCliente() {
+        return Cliente;
+    }
+
+    public void setCliente(String Cliente) {
+        this.Cliente = Cliente;
+    }
+
     public int getEmpleadoId() {
         return empleadoId;
     }
@@ -73,20 +81,31 @@ public class Facturas {
         this.empleadoId = empleadoId;
     }
 
-    public Double getTotal() {
-        return total;
+    public String getEmpleado() {
+        return Empleado;
     }
 
-    public void setTotal(Double total) {
-        this.total = total;
+    public void setEmpleado(String Empleado) {
+        this.Empleado = Empleado;
     }
+
+    public double getTotal() {
+        return Total;
+    }
+
+    public void setTotal(double Total) {
+        this.Total = Total;
+    }
+    
+    
 
     @Override
     public String toString() {
-        return "Facturas{" + "facturaId=" + facturaId + ", fecha=" + fecha + ", hora=" + hora + ", clienteId=" + clienteId + ", empleadoId=" + empleadoId + ", total=" + total + '}';
+        return "Id: " + facturaId + " | " + Cliente;
     }
     
     
+    
+    
+      
 }
-
-

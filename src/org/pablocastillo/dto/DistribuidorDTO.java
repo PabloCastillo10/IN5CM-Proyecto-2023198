@@ -5,7 +5,7 @@
  */
 package org.pablocastillo.dto;
 
-import org.pablocastillo.model.Distribuidores;
+import org.pablocastillo.model.Distribuidor;
 
 /**
  *
@@ -13,7 +13,7 @@ import org.pablocastillo.model.Distribuidores;
  */
 public class DistribuidorDTO {
     private static DistribuidorDTO instance;
-    private Distribuidores Distribuidores;
+    private Distribuidor Distribuidores;
     
     private DistribuidorDTO() {
         
@@ -26,11 +26,11 @@ public class DistribuidorDTO {
         return instance;
     }
 
-    public Distribuidores getDistribuidores() {
+    public Distribuidor getDistribuidores() {
         return Distribuidores;
     }
 
-    public void setDistribuidores(Distribuidores Distribuidores) {
+    public void setDistribuidores(Distribuidor Distribuidores) {
         this.Distribuidores = Distribuidores;
     }
     

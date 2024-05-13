@@ -5,24 +5,19 @@
  */
 package org.pablocastillo.model;
 
-/**
- *
- * @author pablo
- */
-public class Distribuidores {
+
+public class Distribuidor {
     private int distribuidorId;
     private String nombreDistribuidor;
     private String direccionDistribuidor;
     private String nitDistribuidor;
     private String telefonoDistribuidor;
     private String web;
- 
-    
-    public Distribuidores () {
-        
+
+    public Distribuidor() {
     }
 
-    public Distribuidores(int distribuidorId, String nombreDistribuidor, String direccionDistribuidor, String nitDistribuidor, String telefonoDistribuidor, String web) {
+    public Distribuidor(int distribuidorId, String nombreDistribuidor, String direccionDistribuidor, String nitDistribuidor, String telefonoDistribuidor, String web) {
         this.distribuidorId = distribuidorId;
         this.nombreDistribuidor = nombreDistribuidor;
         this.direccionDistribuidor = direccionDistribuidor;
@@ -81,13 +76,8 @@ public class Distribuidores {
 
     @Override
     public String toString() {
-        return "Distribuidores{" + "distribuidorId=" + distribuidorId + ", nombreDistribuidor=" + nombreDistribuidor + ", direccionDistribuidor=" + direccionDistribuidor + ", nitDistribuidor=" + nitDistribuidor + ", telefonoDistribuidor=" + telefonoDistribuidor + ", web=" + web + '}';
+       return "Id: " + distribuidorId + " | " + nombreDistribuidor ;
     }
-
-    
-
-    
-
     
     
 }

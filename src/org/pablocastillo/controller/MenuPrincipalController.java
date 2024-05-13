@@ -22,19 +22,30 @@ public class MenuPrincipalController implements Initializable {
     private Main stage;
     
     @FXML
-    MenuItem btnMenuClientes, btnTicketSoporte, btnDistribuidores, btnCargos;
-    
+    MenuItem btnMenuClientes, btnTicketSoporte,btnCargos,btnDistribuidores,btnCategoriaP,btnEmpleados,btnProductos,btnPromociones,btnFacturas,btnCompras;
     
     @FXML
-    public void handleButtonAction(ActionEvent event){
-        if(event.getSource() == btnMenuClientes){
+    public void handleButtonAction(ActionEvent event) {
+        if (event.getSource() == btnMenuClientes) {
             stage.menuClienteView();
-        } else if(event.getSource() == btnTicketSoporte) {
+        } else if(event.getSource() == btnTicketSoporte){
             stage.menuTicketSoporteView();
-        } else if(event.getSource() == btnDistribuidores) {
-            stage.menuDistribuidorView();
-        } else if(event.getSource() == btnCargos) {
+        } else if(event.getSource() == btnCargos){
             stage.menuCargosView();
+        } else if(event.getSource() == btnDistribuidores){
+            stage.menuDistribuidorView();
+        } else if(event.getSource() == btnCategoriaP){
+            stage.menuCategoriaPView();
+        } else if(event.getSource() == btnEmpleados){
+            stage.menuEmpleadosView();
+        }else if(event.getSource() == btnProductos){
+            stage.menuProductosView();
+        }else if(event.getSource() == btnPromociones){
+            stage.menuPromocionesView();
+        }else if(event.getSource() == btnFacturas){
+            stage.menuFacturasView();
+        }else if(event.getSource() == btnCompras){
+            stage.menuComprasView();
         }
     }
     
