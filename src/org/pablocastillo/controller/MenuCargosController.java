@@ -138,7 +138,7 @@ public class MenuCargosController implements Initializable {
     public void eliminarCargos(int carId){
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "CALL sp_EliminarCargos(?)";
+            String sql = "CALL sp_EliminarCargo(?)";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, carId);
             statement.execute();
@@ -163,7 +163,7 @@ public class MenuCargosController implements Initializable {
         
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "CALL sp_BuscarCargos(?)";
+            String sql = "CALL sp_BuscarCargo(?)";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, Integer.parseInt(tfCargoId.getText()));
             resultSet = statement.executeQuery();

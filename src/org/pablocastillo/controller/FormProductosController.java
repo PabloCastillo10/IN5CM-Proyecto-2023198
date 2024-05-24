@@ -51,7 +51,7 @@ public class FormProductosController implements Initializable {
     private List<File> files = null;
     
     @FXML
-    Button btnRegresarFMA,btnGuardar;
+    Button btnBack,btnGuardar;
    
     @FXML
     TextField tfProductoId,tfNombreP,tfDescripcionP,tfCantidadStock,tfPrecioVU,tfPrecioVM,tfPrecioC;
@@ -65,7 +65,7 @@ public class FormProductosController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) {
     
-        if(event.getSource() == btnRegresarFMA){
+        if(event.getSource() == btnBack){
             ProductoDTO.getProductoDTO().setProducto(null);
             stage.menuProductosView();
         }else if(event.getSource() == btnGuardar){

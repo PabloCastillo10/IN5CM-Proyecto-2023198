@@ -126,7 +126,7 @@ public class FormCargosController implements Initializable {
      public void editarCargos(){
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "Call sp_EditarCargos(?,?,?)";
+            String sql = "Call sp_EditarCargo(?,?,?)";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, Integer.parseInt(tfCargoId.getText()));
             statement.setString(2, tfNombreCargo.getText());

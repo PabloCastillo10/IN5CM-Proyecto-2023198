@@ -145,7 +145,7 @@ public class MenuDistribuidoresController implements Initializable {
     public void eliminarDistribuidor(int disId){
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "CALL sp_EliminarDistribuidores(?)";
+            String sql = "CALL sp_EliminarDistribuidor(?)";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, disId);
             statement.execute();
@@ -170,7 +170,7 @@ public class MenuDistribuidoresController implements Initializable {
         
         try{
             conexion = Conexion.getInstance().obtenerConexion();
-            String sql = "CALL sp_BuscarDistribuidores(?)";
+            String sql = "CALL sp_BuscarDistribuidor(?)";
             statement = conexion.prepareStatement(sql);
             statement.setInt(1, Integer.parseInt(tfDistribuidorId.getText()));
             resultSet = statement.executeQuery();

@@ -50,7 +50,7 @@ public class MenuPromocionesController implements Initializable {
     TableColumn colPromocionId,colPrecio,colDescripcion,colFechaI,colFechaF,colProductoId;
     
     @FXML
-    Button btnRegresar,btnAgregar,btnEditar,btnEliminar,btnBuscar;
+    Button btnBack,btnAgregar,btnEditar,btnEliminar,btnBuscar;
     
     @FXML
     TextField tfPromocionId;
@@ -58,7 +58,7 @@ public class MenuPromocionesController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) {
     
-        if(event.getSource() == btnRegresar){
+        if(event.getSource() == btnBack){
             stage.menuPrincipalView();
         }else if(event.getSource() == btnAgregar){
             stage.formPromocionesView(1);
