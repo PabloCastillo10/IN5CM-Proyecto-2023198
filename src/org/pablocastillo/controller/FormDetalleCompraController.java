@@ -31,7 +31,7 @@ import org.pablocastillo.utils.SuperKinalAlert;
 /**
  * FXML Controller class
  *
- * @author josec
+ * @author 
  */
 public class FormDetalleCompraController implements Initializable {
     private Main stage;

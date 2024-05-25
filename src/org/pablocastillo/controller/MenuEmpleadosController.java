@@ -30,11 +30,7 @@ import org.pablocastillo.model.Empleado;
 import org.pablocastillo.system.Main;
 import org.pablocastillo.utils.SuperKinalAlert;
 
-/**
- * FXML Controller class
- *
- * @author josec
- */
+
 public class MenuEmpleadosController implements Initializable {
     private Main stage;
     private int op;

@@ -29,11 +29,7 @@ import org.pablocastillo.model.CategoriaP;
 import org.pablocastillo.system.Main;
 import org.pablocastillo.utils.SuperKinalAlert;
 
-/**
- * FXML Controller class
- *
- * @author josec
- */
+
 public class MenuCategoriaPController implements Initializable {
 
     private Main stage;

@@ -30,11 +30,6 @@ import org.pablocastillo.model.Promocion;
 import org.pablocastillo.system.Main;
 import org.pablocastillo.utils.SuperKinalAlert;
 
-/**
- * FXML Controller class
- *
- * @author josec
- */
 public class MenuPromocionesController implements Initializable {
     private Main stage;
     private int op;
