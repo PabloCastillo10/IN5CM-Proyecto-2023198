@@ -47,8 +47,21 @@ public class SuperKinalAlert {
             alert.setHeaderText("Campos Pendientes");
             alert.setContentText("Algunos campos necesarios para el registro están vacios");
             alert.showAndWait();
-        }
+        }else if(code == 602) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Usuario incorrecto");
+            alert.setHeaderText("Usuario incorrecto");
+            alert.setContentText("Verifique el usuario");
+            alert.showAndWait();
+        }else if(code == 005) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Contraseña incorrecta");
+            alert.setHeaderText("Contraseña incorrecta");
+            alert.setContentText("Verifique la contraseña");
+            alert.showAndWait();
+        }    
     }
+        
     
     public Optional<ButtonType> mostrarAlertaConfirmacion(int code){
         Optional<ButtonType> action = null;
@@ -68,5 +81,13 @@ public class SuperKinalAlert {
         }
         
         return action;
+    }
+    
+    public void alertaSaludo(String usuario) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Bienvenido");
+        alert.setHeaderText("Bienvenido " + usuario);
+        alert.showAndWait();
+            
     }
 }

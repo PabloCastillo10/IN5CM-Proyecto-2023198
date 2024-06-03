@@ -31,6 +31,8 @@ import org.pablocastillo.controller.FormEmpleadosController;
 import org.pablocastillo.controller.FormFacturasController;
 import org.pablocastillo.controller.FormProductosController;
 import org.pablocastillo.controller.FormPromocionesController;
+import org.pablocastillo.controller.FormUsuarioController;
+import org.pablocastillo.controller.LoginController;
 import org.pablocastillo.controller.MenuCategoriaPController;
 import org.pablocastillo.controller.MenuComprasController;
 import org.pablocastillo.controller.MenuEmpleadosController;
@@ -53,7 +55,7 @@ public class Main extends Application {
         
         this.stage = stage;
         stage.setTitle("Super Kinal App");
-        menuPrincipalView();
+        loginView();
         stage.show();
     }
     
@@ -292,6 +294,23 @@ public class Main extends Application {
         }
     }
     
+    public void formUsuarioView(){
+        try{
+            FormUsuarioController formUsuarioView = (FormUsuarioController) switchScene ("FormUsuarioView.fxml", 500, 750);
+            formUsuarioView.setStage(this);
+        }catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    
+    public void loginView(){
+        try{
+            LoginController loginView = (LoginController) switchScene("LoginView.fxml", 500, 750);
+            loginView.setStage(this);
+        }catch(Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
     
 
     /**

@@ -57,7 +57,7 @@ public class FormEmpleadosController implements Initializable {
                 if(!tfNombreE.getText().equals("") && !tfApellidoE.getText().equals("") && !tfSueldo.getText().equals("") && !tfHoraEntrada.getText().equals("") && !tfHoraSalida.getText().equals("")){
                     agregarEmpleado();
                     SuperKinalAlert.getInstance().mostrarAlertaInformacion(400);
-                    stage.menuEmpleadosView();
+                    stage.formUsuarioView();
                 }else{
                     SuperKinalAlert.getInstance().mostrarAlertaInformacion(33);
                     if(tfNombreE.getText().equals("")){
