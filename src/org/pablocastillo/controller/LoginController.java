@@ -44,35 +44,33 @@ public class LoginController implements Initializable {
     Button btnIniciar, btnRegistrar;
     
     @FXML
-    public void handleButtonAction(ActionEvent event) {
-       
-        
-        if(event.getSource() == btnIniciar) {
+     public void handleButtonAction(ActionEvent event){
+        if(event.getSource() == btnIniciar){
             Usuario usuario = buscarUsuario();
             if(op == 0){
-                
                 if(usuario != null){
                     if(PasswordUtils.getInstance().checkPassword(tfPassword.getText(), usuario.getContrasenia())){
                         SuperKinalAlert.getInstance().alertaSaludo(usuario.getUsuario());
                         if(usuario.getNivelAccesoId() == 1){
                             btnRegistrar.setDisable(false);
-                            btnIniciar.setText("Ir al menu");
+                            btnIniciar.setText("Ir Al Menu");
                             op = 1;
                         }else if(usuario.getNivelAccesoId() == 2){
                             stage.menuPrincipalView();
-                        } 
+                        }
                     }else{
                         SuperKinalAlert.getInstance().mostrarAlertaInformacion(005);
                     }
                 }else{
                     SuperKinalAlert.getInstance().mostrarAlertaInformacion(602);
                 }
-                }else{
-                    stage.menuPrincipalView();
-                }
-            
-        }else if(event.getSource() == btnRegistrar) {
+                
+            }else{
+                stage.menuPrincipalView();
+            }
+        }else if(event.getSource() == btnRegistrar){
             stage.formUsuarioView();
+                        
         }
     }
     /**

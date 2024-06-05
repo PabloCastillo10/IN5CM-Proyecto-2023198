@@ -868,7 +868,7 @@ begin
 	select * from nivelesAcceso;
 end $$
 delimiter ;
-
+select * from Usuarios;
 
 
 

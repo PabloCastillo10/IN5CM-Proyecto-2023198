@@ -46,62 +46,47 @@ public class FormEmpleadosController implements Initializable {
    @FXML
    ComboBox cmbCargos,cmbEncargados;
    
-   @FXML
-    private void handleButtonAction(ActionEvent event) {
-    
-        if(event.getSource() == btnRegresarFMA){
-            EmpleadoDTO.getEmpleadoDTO().setEmpleado(null);
-            stage.menuEmpleadosView();
-        }else if(event.getSource() == btnGuardar){
+  @FXML
+private void handleButtonAction(ActionEvent event) {
+    if(event.getSource() == btnRegresarFMA){
+        EmpleadoDTO.getEmpleadoDTO().setEmpleado(null);
+       
+    } else if(event.getSource() == btnGuardar){
+        if(!tfNombreE.getText().equals("") && !tfApellidoE.getText().equals("") && !tfSueldo.getText().equals("") && !tfHoraEntrada.getText().equals("") && !tfHoraSalida.getText().equals("")){
             if(op == 1){
-                if(!tfNombreE.getText().equals("") && !tfApellidoE.getText().equals("") && !tfSueldo.getText().equals("") && !tfHoraEntrada.getText().equals("") && !tfHoraSalida.getText().equals("")){
-                    agregarEmpleado();
-                    SuperKinalAlert.getInstance().mostrarAlertaInformacion(400);
-                    stage.formUsuarioView();
-                }else{
-                    SuperKinalAlert.getInstance().mostrarAlertaInformacion(33);
-                    if(tfNombreE.getText().equals("")){
-                        tfNombreE.requestFocus();
-                    }else if(tfApellidoE.getText().equals("")){
-                        tfApellidoE.requestFocus();
-                    }else if(tfSueldo.getText().equals("")){
-                        tfSueldo.requestFocus();
-                    }else if(tfHoraEntrada.getText().equals("")){
-                        tfHoraEntrada.requestFocus();
-                    }else if(tfHoraSalida.getText().equals("")){
-                        tfHoraSalida.requestFocus();
-                    }
+                agregarEmpleado();
+                SuperKinalAlert.getInstance().mostrarAlertaInformacion(400);
+                stage.formUsuarioView();
+            } else if(op == 2){
+                if(SuperKinalAlert.getInstance().mostrarAlertaConfirmacion(505).get() == ButtonType.OK){
+                    editarEmpleado();
+                    EmpleadoDTO.getEmpleadoDTO().setEmpleado(null);
+                    SuperKinalAlert.getInstance().mostrarAlertaInformacion(500);
+                    stage.menuEmpleadosView();
+                } else {
+                    stage.menuEmpleadosView();
                 }
-                
-               
-            }else if(op == 2){
-                if(!tfNombreE.getText().equals("") && !tfApellidoE.getText().equals("") && !tfSueldo.getText().equals("") && !tfHoraEntrada.getText().equals("") && !tfHoraSalida.getText().equals("")){
-                    if(SuperKinalAlert.getInstance().mostrarAlertaConfirmacion(505).get() == ButtonType.OK){
-                        editarEmpleado();
-                        EmpleadoDTO.getEmpleadoDTO().setEmpleado(null);
-                        SuperKinalAlert.getInstance().mostrarAlertaInformacion(500);
-                        stage.menuEmpleadosView();
-                    }else{
-                        stage.menuEmpleadosView();
-                    }
-                }else{
-                    SuperKinalAlert.getInstance().mostrarAlertaInformacion(33);
-                    if(tfNombreE.getText().equals("")){
-                        tfNombreE.requestFocus();
-                    }else if(tfApellidoE.getText().equals("")){
-                        tfApellidoE.requestFocus();
-                    }else if(tfSueldo.getText().equals("")){
-                        tfSueldo.requestFocus();
-                    }else if(tfHoraEntrada.getText().equals("")){
-                        tfHoraEntrada.requestFocus();
-                    }else if(tfHoraSalida.getText().equals("")){
-                        tfHoraSalida.requestFocus();
-                    }
-                }
-                
+            } else if(op == 3){
+                agregarEmpleado();
+                stage.formUsuarioView(); 
+            }
+        } else {
+            SuperKinalAlert.getInstance().mostrarAlertaInformacion(33);
+            if(tfNombreE.getText().equals("")){
+                tfNombreE.requestFocus();
+            } else if(tfApellidoE.getText().equals("")){
+                tfApellidoE.requestFocus();
+            } else if(tfSueldo.getText().equals("")){
+                tfSueldo.requestFocus();
+            } else if(tfHoraEntrada.getText().equals("")){
+                tfHoraEntrada.requestFocus();
+            } else if(tfHoraSalida.getText().equals("")){
+                tfHoraSalida.requestFocus();
             }
         }
     }
+}
+
    
    
     @Override

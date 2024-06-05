@@ -162,5 +162,9 @@ CREATE TABLE Usuarios (
         REFERENCES Empleados(empleadoId)
 );
 
--- Ajuste de zona horaria global
+INSERT INTO NivelesAcceso(nivelAcceso)VALUES 
+('Admin'),
+('User');
+
+
 SET GLOBAL time_zone = '-6:00';
