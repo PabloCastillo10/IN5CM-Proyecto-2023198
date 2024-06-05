@@ -56,7 +56,7 @@ private void handleButtonAction(ActionEvent event) {
             if(op == 1){
                 agregarEmpleado();
                 SuperKinalAlert.getInstance().mostrarAlertaInformacion(400);
-                stage.formUsuarioView();
+                stage.menuEmpleadosView();
             } else if(op == 2){
                 if(SuperKinalAlert.getInstance().mostrarAlertaConfirmacion(505).get() == ButtonType.OK){
                     editarEmpleado();

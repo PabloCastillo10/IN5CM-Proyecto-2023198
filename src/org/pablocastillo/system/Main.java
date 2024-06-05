@@ -55,7 +55,7 @@ public class Main extends Application {
         
         this.stage = stage;
         stage.setTitle("Super Kinal App");
-        loginView();
+        formUsuarioView();
         stage.show();
     }
     
