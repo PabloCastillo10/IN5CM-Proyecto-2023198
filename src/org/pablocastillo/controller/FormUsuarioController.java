@@ -62,7 +62,7 @@ public class FormUsuarioController implements Initializable {
             stage.loginView();
         }else if(event.getSource() == btnEmpleado) {
             
-            stage.formEmpleadosView(1);
+            stage.formEmpleadosView(3);
         }
     }
     

@@ -52,12 +52,12 @@
                   <Font size="22.0" />
                </font>
             </Button>
-            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="69.0" prefWidth="124.0" style="-fx-background-radius: 10;" text="Regresar" GridPane.rowIndex="4">
+            <Button fx:id="btnBack" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="69.0" prefWidth="124.0" style="-fx-background-radius: 10;" text="Regresar" GridPane.rowIndex="3">
                <font>
                   <Font size="22.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="69.0" prefWidth="124.0" style="-fx-background-radius: 10;" text="Reportes" GridPane.rowIndex="3">
+            <Button fx:id="btnVerFactura" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="70.0" prefWidth="157.0" style="-fx-background-radius: 10;" text="Ver Factura" GridPane.rowIndex="4">
                <font>
                   <Font size="22.0" />
                </font>

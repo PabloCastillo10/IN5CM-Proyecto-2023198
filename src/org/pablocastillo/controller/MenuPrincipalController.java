@@ -12,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.MenuItem;
+import org.pablocastillo.report.GenerarReporte;
 import org.pablocastillo.system.Main;
 
 /**
@@ -22,7 +23,7 @@ public class MenuPrincipalController implements Initializable {
     private Main stage;
     
     @FXML
-    MenuItem btnMenuClientes, btnTicketSoporte,btnCargos,btnDistribuidores,btnCategoriaP,btnEmpleados,btnProductos,btnPromociones,btnFacturas,btnCompras;
+    MenuItem btnMenuClientes, btnTicketSoporte,btnCargos,btnDistribuidores,btnCategoriaP,btnEmpleados,btnProductos,btnPromociones,btnFacturas,btnCompras,btnClientes3,btnProductos3;
     
     @FXML
     public void handleButtonAction(ActionEvent event) {
@@ -46,6 +47,10 @@ public class MenuPrincipalController implements Initializable {
             stage.menuFacturasView();
         }else if(event.getSource() == btnCompras){
             stage.menuComprasView();
+        }else if(event.getSource() == btnClientes3){
+            GenerarReporte.getInstance().generarClientes();
+        }else if(event.getSource() == btnProductos3){
+            GenerarReporte.getInstance().generarProductos();
         }
     }
     

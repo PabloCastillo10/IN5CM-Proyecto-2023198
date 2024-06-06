@@ -28,6 +28,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import org.pablocastillo.dao.Conexion;
 import org.pablocastillo.dto.FacturaDTO;
 import org.pablocastillo.model.Factura;
+import org.pablocastillo.report.GenerarReporte;
 import org.pablocastillo.system.Main;
 import org.pablocastillo.utils.SuperKinalAlert;
 
@@ -47,7 +48,7 @@ public class MenuFacturasController implements Initializable {
     TableColumn colFacturaId,colFecha,colHora,colCliente,colEmpleado,colTotal;
     
     @FXML
-    Button btnBack,btnAgregar,btnEditar,btnEliminar,btnBuscar,btnAgregarDF;
+    Button btnBack,btnAgregar,btnEditar,btnEliminar,btnBuscar,btnAgregarDF,btnVerFactura;
     
     @FXML
     TextField tfFacturaId;
@@ -78,6 +79,8 @@ public class MenuFacturasController implements Initializable {
             }
         }else if(event.getSource() == btnAgregarDF){
             stage.formDetalleFacturaView(1);
+        }else if(event.getSource() == btnVerFactura){
+            GenerarReporte.getInstance().generarFactura(((Factura)tblFacturas.getSelectionModel().getSelectedItem()).getFacturaId());
         }
     }
     
