@@ -16,8 +16,8 @@ import java.sql.SQLException;
 public class Conexion {
     private static Conexion instance;
     private String url = "jdbc:mysql://localhost:3306/EjercicioDB?serverTimezone=GMT-6&&useSSL=false";
-    private String user = "root";
-    private String password = "admin";
+    private String user = "pabloCastillo";
+    private String password = "messi10";
     
     
     private Conexion(){
